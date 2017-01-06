@@ -1,7 +1,7 @@
 <?php
 /**
  * webtrees: online genealogy
- * Copyright (C) 2016 webtrees development team
+ * Copyright (C) 2017 webtrees development team
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -45,15 +45,15 @@ class Mail {
 	 */
 	public static function send(Tree $tree, $to_email, $to_name, $replyto_email, $replyto_name, $subject, $message) {
 		try {
-		    $mail = Swift_Message::newInstance()
-                ->setSubject($subject)
-                ->setFrom(Site::getPreference('SMTP_FROM_NAME'), $tree->getPreference('title'))
-                ->setTo($to_email, $to_name)
-                ->setReplyTo($replyto_email, $replyto_name)
-                ->setBody($message, 'text/html')
-                ->addPart(Filter::unescapeHtml($message), 'text/plain');
-		    
-            Swift_Mailer::newInstance(self::transport())->send($mail);
+			$mail = Swift_Message::newInstance()
+				->setSubject($subject)
+				->setFrom(Site::getPreference('SMTP_FROM_NAME'), $tree->getPreference('title'))
+				->setTo($to_email, $to_name)
+				->setReplyTo($replyto_email, $replyto_name)
+				->setBody($message, 'text/html')
+				->addPart(Filter::unescapeHtml($message), 'text/plain');
+
+			Swift_Mailer::newInstance(self::transport())->send($mail);
 		} catch (Exception $ex) {
 			Log::addErrorLog('Mail: ' . $ex->getMessage());
 
@@ -93,21 +93,21 @@ class Mail {
 		case 'internal':
 			return Swift_MailTransport::newInstance();
 		case 'external':
-            $transport = Swift_SmtpTransport::newInstance()
-                ->setHost(Site::getPreference('SMTP_HOST'))
-                ->setPort(Site::getPreference('SMTP_PORT'))
-                ->setLocalDomain(Site::getPreference('SMTP_HELO'));
-            
-            if (Site::getPreference('SMTP_AUTH')) {
-                $transport
-                    ->setUsername(Site::getPreference('SMTP_AUTH_USER'))
-                    ->setPassword(Site::getPreference('SMTP_AUTH_PASS'));
-            }
-            
-            if (Site::getPreference('SMTP_SSL') !== 'none') {
-                $transport->setEncryption(Site::getPreference('SMTP_SSL'));
-            }
-			
+			$transport = Swift_SmtpTransport::newInstance()
+				->setHost(Site::getPreference('SMTP_HOST'))
+				->setPort(Site::getPreference('SMTP_PORT'))
+				->setLocalDomain(Site::getPreference('SMTP_HELO'));
+
+			if (Site::getPreference('SMTP_AUTH') === '1') {
+				$transport
+					->setUsername(Site::getPreference('SMTP_AUTH_USER'))
+					->setPassword(Site::getPreference('SMTP_AUTH_PASS'));
+			}
+
+			if (Site::getPreference('SMTP_SSL') !== 'none') {
+				$transport->setEncryption(Site::getPreference('SMTP_SSL'));
+			}
+
 			return $transport;
 		default:
 			// For testing
