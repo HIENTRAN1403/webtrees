@@ -22,8 +22,10 @@
  *     wt-site-logo
  *     wt-site-title
  *     wt-header-search
- *     wt-secondary-menu
- *     wt-primary-menu
+ *     wt-secondary-navigation
+ *      wt-secondary-menu
+ *     wt-primary-navigation
+ *      wt-primary-menu
  *   wt-main
  *     wt-page-title
  *     wt-page-content
@@ -53,7 +55,13 @@
 .wt-header-search {
 }
 
+.wt-secondary-navigation {
+}
+
 .wt-secondary-menu {
+}
+
+.wt-primary-navigation {
 }
 
 .wt-primary-menu {
@@ -72,6 +80,7 @@
 }
 
 .wt-footer {
+	text-align: center;
 }
 
 .wt-contact-links {
@@ -87,7 +96,7 @@
 }
 
 /*
- * These elements are loaded dynamically, and benefit form a placeholder
+ * Provide a placeholder for content that is loaded dynamically.
  */
 .wt-ajax-load:empty {
 }

@@ -42,23 +42,6 @@ class XeneaTheme extends AbstractTheme implements ThemeInterface {
 	}
 
 	/**
-	 * Create the contents of the <header> tag.
-	 *
-	 * @return string
-	 */
-	protected function headerContent() {
-		return
-			//$this->accessibilityLinks() .
-			'<div class="header-upper">' .
-			$this->formatTreeTitle() .
-			$this->formQuickSearch() .
-		'</div>' .
-		'<div class="header-lower">' .
-			$this->formatSecondaryMenu() .
-		'</div>';
-	}
-
-	/**
 	 * Allow themes to add extra scripts to the page footer.
 	 *
 	 * @return string

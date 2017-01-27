@@ -22,8 +22,10 @@
  *     wt-site-logo
  *     wt-site-title
  *     wt-header-search
- *     wt-secondary-menu
- *     wt-primary-menu
+ *     wt-secondary-navigation
+ *      wt-secondary-menu
+ *     wt-primary-navigation
+ *      wt-primary-menu
  *   wt-main
  *     wt-page-title
  *     wt-page-content
@@ -42,21 +44,58 @@
 }
 
 .wt-header {
+	color: #fff;
+	background-image: linear-gradient(to right, #06d, #acf);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .wt-accessibility-links {
 }
 
+.wt-site-logo {
+}
+
 .wt-site-title {
+	flex: 1 0 75%;
+	font-size: 1.5rem;
+	padding: 0.5rem;
 }
 
 .wt-header-search {
+	flex: 1 0 25%;
+	text-align: end;
+	padding: 0.5rem;
+}
+
+.wt-secondary-navigation {
 }
 
 .wt-secondary-menu {
+	flex: 0 1 100%;
+	background-image: linear-gradient(#14a, #9be, #14a);
+	padding: 0.25rem 0;
+	justify-content: space-between;
+}
+
+.wt-secondary-menu a.nav-link {
+	color: #fff;
+	font-weight: bold;
+}
+
+.wt-secondary-menu .dropdown-toggle:after {
+	display: none;
+}
+
+.wt-primary-navigation {
 }
 
 .wt-primary-menu {
+	flex: 0 1 100%;
+	background: #fff;
+	border-bottom: 2px solid #0073cf;
+	justify-content: center;
 }
 
 .wt-main {
@@ -88,7 +127,7 @@
 }
 
 /*
- * These elements are loaded dynamically, and benefit form a placeholder
+ * Provide a placeholder for content that is loaded dynamically.
  */
 .wt-ajax-load:empty {
 }
@@ -170,54 +209,6 @@ a:hover {
 	text-align: center;
 }
 
-dl {
-	margin: 0;
-}
-
-dt {
-	float: left;
-	font-weight: bold;
-	margin-right: 10px;
-}
-
-[dir=rtl] dt {
-	float: right;
-	margin-right: auto;
-	margin-left: 10px;
-}
-
-h2 {
-	color: #006;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-h4 {
-	color: #006;
-	font-size: 12px;
-	font-weight: bold;
-}
-
-th {
-	font-weight: 100;
-}
-
-ul {
-	padding-left: 15px;
-	padding-right: 15px;
-	margin: 8px;
-}
-
-img {
-	border: 0;
-}
-
-legend img {
-	height: 20px;
-	vertical-align: middle;
-	width: 20px;
-}
-
 img.block,
 #mycart img {
 	border: 0;
@@ -232,10 +223,6 @@ img.block,
 	font-weight: bold;
 	padding: 4px;
 	text-align: center;
-}
-
-header form {
-	font-size: 12px;
 }
 
 #mycart a img {
@@ -892,7 +879,7 @@ a:hover .nameZoom {
 }
 
 #pending .indent {
-	padding: 0px;
+	padding: 0;
 }
 
 /* ======== Person box ======= */
@@ -2000,7 +1987,7 @@ dd .deletelink {
 }
 
 .odometer {
-	font-family: courier, mono-space;
+	font-family: courier, monospace;
 	font-weight: bold;
 	background: #000;
 	color: #fff;
@@ -3989,283 +3976,6 @@ a.icon-udarrow:hover {
 .icon-mime-video-x-ms-wmv {
 	background-position: -50px -196px;
 }
-/* ====== End Icon styles ====== */
-
-/* ====== Theme Header ========= */
-header h1 {
-	clear: left;
-	float: left;
-	font-size: 24px;
-	font-weight: normal;
-	height: 20px;
-	margin: 10px 12px;
-}
-
-[dir=rtl] header h1 {
-	float: right;
-}
-
-.header-upper {
-	height: 40px;
-	color: #fff;
-	background: #039 url(images/cabeza.png) left top;
-}
-
-[dir=rtl] .header-upper {
-	background: url(images/cabeza_rtl.png) right top;
-}
-
-.wt-header-search {
-	display: block;
-	float: right;
-	margin-top: 10px;
-	margin-right: 5px;
-}
-
-[dir=rtl] .wt-header-search {
-	float: left;
-	padding-left: 10px;
-}
-
-/* Set stack level for top two header menu rows */
-.secondary-menu ul,
-.primary-menu ul {
-	z-index: 210;
-	max-height: 400px;
-	min-width: 140px;
-	overflow-y: auto;
-	overflow-x: hidden;
-}
-
-/* ====== Secondary menu ======= */
-.header-lower {
-	background: #84beff url(images/barra.png);
-	width: 100%;
-	color: #fff;
-	height: 40px;
-	position: relative;
-}
-
-.menu-theme,
-.menu-favorites {
-	float: left;
-}
-
-[dir=rtl] .menu-theme,
-[dir=rtl] .menu-favorites {
-	float: right;
-}
-
-.menu-language {
-	float: right;
-}
-
-[dir=rtl] .menu-language {
-	float: left;
-}
-
-.secondary-menu {
-	clear: both;
-	text-align: center;
-	margin: 0;
-	list-style: none;
-}
-
-.secondary-menu li {
-	display: inline-block;
-	position: relative;
-	white-space: nowrap;
-	padding: 12px 10px 0 5px;
-}
-
-.secondary-menu a {
-	color: #fff;
-	font-weight: bold;
-}
-
-.secondary-menu a:hover {
-	color: #f00;
-}
-
-.secondary-menu ul {
-	list-style: none;
-	display: none;
-	position: absolute;
-	top: 18px;
-	background-color: #fff;
-	border: thin solid #c3dfff;
-	padding: 1px;
-}
-
-.menu-language ul {
-	left: auto;
-	right: 0;
-}
-
-[dir=rtl] .menu-language ul {
-	left: 0;
-	right: auto;
-}
-
-.secondary-menu li li {
-	padding: 2px;
-	display: block;
-	text-align: left;
-}
-
-[dir=rtl] .secondary-menu li li {
-	text-align: right;
-}
-
-[dir=rtl] li li {
-	text-align: right;
-}
-
-.secondary-menu li li a {
-	color: #000;
-	font-weight: normal;
-	display: block;
-	padding: 3px;
-}
-
-.secondary-menu li li a:hover {
-	color: #f00;
-}
-
-.secondary-menu li:hover ul {
-	display: block;
-}
-
-.secondary-menu .active a {
-	color: #006;
-	font-weight: 900;
-}
-
-/* ====== Primary menu ========= */
-header nav {
-	border-bottom: 2px solid #0073cf;
-	float: left;
-	height: 40px;
-	margin-bottom: 14px;
-	padding: 10px 0;
-	position: relative;
-	width: 100%;
-	clear: both;
-}
-
-.primary-menu,
-.primary-menu ul {
-	margin: 0;
-	list-style-type: none;
-}
-
-.primary-menu {
-	margin: 0 auto;
-	display: table;
-}
-
-.primary-menu li {
-	float: left;
-	position: relative;
-}
-
-.primary-menu li li {
-	clear: both;
-}
-
-.primary-menu li:hover > ul {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 100%;
-	right: auto;
-	margin-top: 0;
-}
-
-.primary-menu > li:hover > ul {
-	left: 0;
-	right: auto;
-	top: 42px;
-}
-
-.primary-menu a {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.primary-menu ul {
-	position: absolute;
-	display: none;
-	background: #fff;
-	border: thin solid #aaa;
-	padding: 0;
-}
-
-.primary-menu li a {
-	margin: auto;
-	padding-top: 22px;
-	width: 100%;
-}
-
-.primary-menu li li a {
-	display: block;
-	position: relative;
-	float: left;
-	font-size: 11px;
-	line-height: 1.5;
-	padding: 0 10px 1px 5px;
-}
-
-.primary-menu > li {
-	background-image: url(images/sprites-top-menu.png);
-	background-repeat: no-repeat;
-	min-width: 80px;
-	width: auto;
-	text-align: center;
-	height: 28px;
-	line-height: 28px;
-	text-indent: 0;
-}
-
-.primary-menu li li {
-	background-image: url(images/sprites-sub-menu.png);
-	background-repeat: no-repeat;
-	height: 23px;
-	left: auto;
-	line-height: 23px;
-	text-align: left;
-	text-indent: 26px;
-	margin-top:  2px;
-	width: 100%;
-}
-
-/* Reverse left and right on RTL pages */
-[dir=rtl] .primary-menu li {
-	float: right;
-}
-
-[dir=rtl] .primary-menu li:hover > ul {
-	right: 100%;
-	left: auto;
-}
-
-[dir=rtl] .primary-menu > li:hover > ul {
-	left: auto;
-	right: 0;
-}
-
-[dir=rtl] .primary-menu li li {
-	text-align: right;
-}
-
-[dir=rtl] .primary-menu li li a {
-	float: right;
-	padding: 1px 5px 1px 10px;
-}
-
-/* ====== End Theme Header ===== */
-
 /* ====== Theme Footer ========= */
 
 footer {

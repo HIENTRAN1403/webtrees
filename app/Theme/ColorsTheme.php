@@ -57,18 +57,6 @@ class ColorsTheme extends CloudsTheme implements ThemeInterface {
 	}
 
 	/**
-	 * Create the contents of the <header> tag.
-	 *
-	 * @return string
-	 */
-	protected function headerContent() {
-		return
-			//$this->accessibilityLinks() .
-			$this->formatTreeTitle() .
-			$this->formatSecondaryMenu();
-	}
-
-	/**
 	 * Create resources for the colors theme.
 	 */
 	public function hookAfterInit() {

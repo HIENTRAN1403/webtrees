@@ -668,9 +668,9 @@ abstract class AbstractTheme {
 		return
 			$this->accessibilityLinks() .
 			$this->logoHeader() .
+			$this->formatTreeTitle() .
 			$this->formQuickSearch() .
 			$this->secondaryMenuContainer($this->secondaryMenu()) .
-			$this->formatTreeTitle() .
 			$this->primaryMenuContainer($this->primaryMenu());
 	}
 
@@ -2046,7 +2046,7 @@ abstract class AbstractTheme {
 	 * @return string
 	 */
 	protected function primaryMenuContainer(array $menus) {
-		return '<nav><ul class="nav wt-primary-menu">' . $this->primaryMenuContent($menus) . '</ul></nav>';
+		return '<nav role="navigation" class="wt-primary-navigation"><ul class="nav wt-primary-menu">' . $this->primaryMenuContent($menus) . '</ul></nav>';
 	}
 
 	/**
@@ -2087,7 +2087,7 @@ abstract class AbstractTheme {
 	 * @return string
 	 */
 	protected function secondaryMenuContainer(array $menus) {
-		return '<ul class="nav wt-secondary-menu">' . $this->secondaryMenuContent($menus) . '</ul>';
+		return '<div class="wt-secondary-navigation"><ul class="nav wt-secondary-menu">' . $this->secondaryMenuContent($menus) . '</ul></div>';
 	}
 
 	/**

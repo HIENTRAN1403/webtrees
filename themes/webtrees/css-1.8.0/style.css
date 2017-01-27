@@ -22,8 +22,10 @@
  *     wt-site-logo
  *     wt-site-title
  *     wt-header-search
- *     wt-secondary-menu
- *     wt-primary-menu
+ *     wt-secondary-navigation
+ *      wt-secondary-menu
+ *     wt-primary-navigation
+ *      wt-primary-menu
  *   wt-main
  *     wt-page-title
  *     wt-page-content
@@ -66,6 +68,9 @@
 }
 
 .wt-header-search {
+}
+
+.wt-secondary-navigation {
 }
 
 .wt-secondary-menu {
@@ -170,11 +175,15 @@
 	border: 0;
 }
 
+.wt-primary-navigation {
+}
+
 .wt-primary-menu {
 	border-top: 2px solid #81a9cb;
 	border-bottom: 2px solid #81a9cb;
 	padding: 0.5rem 0;
 	margin-bottom: 1rem;
+	justify-content: center;
 }
 
 .wt-primary-menu .dropdown-menu {
@@ -186,10 +195,10 @@
 }
 
 .wt-primary-menu .nav-item {
-	background-image: url("images/large_menu_sprite.png");
+	background-image: url(images/large_menu_sprite.png);
 	background-repeat: no-repeat;
 	height: 64px;
-	min-width: 80px;
+	min-width: 5rem;
 	text-align: center;
 }
 
@@ -198,7 +207,7 @@
 }
 
 .wt-primary-menu .dropdown-item {
-	background-image: url("images/small_menu_sprite.png");
+	background-image: url(images/small_menu_sprite.png);
 	background-repeat: no-repeat;
 }
 
@@ -219,6 +228,7 @@
 }
 
 .wt-footer {
+	text-align: center;
 }
 
 .wt-contact-links {
@@ -234,7 +244,7 @@
 }
 
 /*
- * These elements are loaded dynamically, and benefit form a placeholder
+ * Provide a placeholder for content that is loaded dynamically.
  */
 .wt-ajax-load:empty {
 	height: 32px;

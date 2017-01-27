@@ -22,8 +22,10 @@
  *     wt-site-logo
  *     wt-site-title
  *     wt-header-search
- *     wt-secondary-menu
- *     wt-primary-menu
+ *     wt-secondary-navigation
+ *      wt-secondary-menu
+ *     wt-primary-navigation
+ *      wt-primary-menu
  *   wt-main
  *     wt-page-title
  *     wt-page-content
@@ -65,6 +67,9 @@
 [dir=rtl] .wt-header-search {
 	left: 1rem;
 	right: inherit;
+}
+
+.wt-secondary-navigation {
 }
 
 .wt-secondary-menu {
@@ -142,6 +147,9 @@
 
 .wt-secondary-menu .dropdown-toggle:after {
 	display: none;
+}
+
+.wt-primary-navigation {
 }
 
 .wt-primary-menu {
@@ -282,7 +290,7 @@
 	text-align: center;
 }
 
-.wt.wt.wt-primary-menu .dropdown-toggle:after {
+.wt-primary-menu .dropdown-toggle:after {
 	display: none;
 }
 
@@ -299,6 +307,7 @@
 }
 
 .wt-footer {
+	text-align: center;
 }
 
 .wt-contact-links {
@@ -314,7 +323,7 @@
 }
 
 /*
- * These elements are loaded dynamically, and benefit form a placeholder
+ * Provide a placeholder for content that is loaded dynamically.
  */
 .wt-ajax-load:empty {
 }

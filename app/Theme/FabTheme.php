@@ -47,18 +47,6 @@ class FabTheme extends AbstractTheme implements ThemeInterface {
 	}
 
 	/**
-	 * Create the contents of the <header> tag.
-	 *
-	 * @return string
-	 */
-	protected function headerContent() {
-		return
-			$this->accessibilityLinks() .
-			$this->formatTreeTitle() .
-			$this->formatSecondaryMenu();
-	}
-
-	/**
 	 * Create a search field and submit button for the quick search form in the header.
 	 *
 	 * @return string
