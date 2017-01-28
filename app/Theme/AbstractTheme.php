@@ -289,11 +289,14 @@ abstract class AbstractTheme {
 	 */
 	public function bodyHeader() {
 		return
-			'<body class="wt-global container">' .
-			'<header class="wt-header">' .
+			'<body class="wt-global">' .
+			'<header class="wt-header-container">' .
+			'<div class="wt-header-content container">' .
 			$this->headerContent() .
+			'</div>' .
 			'</header>' .
-			'<main id="content" class="wt-main">' .
+			'<main id="content" class="wt-main-container">' .
+		'<div class="wt-main-content container">' .
 			$this->flashMessagesContainer(FlashMessages::getMessages());
 	}
 
@@ -454,7 +457,12 @@ abstract class AbstractTheme {
 	 * @return string
 	 */
 	public function footerContainer() {
-		return '</main><footer class="wt-footer">' . $this->footerContent() . '</footer>';
+		return
+			'</main>' .
+			'</div>' .
+			'<footer class="wt-footer-container">' .
+			'<div class="wt-footer-content container">' . $this->footerContent() . '</div>' .
+			'</footer>';
 	}
 
 	/**

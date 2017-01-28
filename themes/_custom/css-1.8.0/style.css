@@ -17,38 +17,53 @@
  * Pages have the following high-level structure:
  *
  * wt-global
- *   wt-header
- *     wt-accessibility-links
- *     wt-site-logo
- *     wt-site-title
- *     wt-header-search
- *     wt-secondary-navigation
- *      wt-secondary-menu
- *     wt-primary-navigation
- *      wt-primary-menu
- *   wt-main
- *     wt-page-title
- *     wt-page-content
- *   wt-footer
- *     wt-contact-links
- *     wt-powered-by-webtrees
- *     wt-page-views
- *     wt-cookie-warning
+ * +---wt-header-container
+ * |   +---wt-header-content
+ * |       +---wt-accessibility-links
+ * |       +---wt-site-logo
+ * |       +---wt-site-title
+ * |       +---wt-header-search
+ * |       |   +---wt-header-search-form
+ * |       +---wt-secondary-navigation
+ * |       |   +---wt-secondary-menu
+ * |       +---wt-primary-navigation
+ * |           +---wt-primary-menu
+ * +---wt-main-container
+ * |   +---wt-main-content
+ * |       +---wt-messages
+ * |       +---wt-page-title
+ * |       +---wt-page-options
+ * |       +---wt-page-content
+ * +---wt-footer-container
+ *     +---wt-footer-content
+ *         +---wt-contact-links
+ *         +---wt-powered-by-webtrees
+ *         +---wt-page-views
+ *         +---wt-cookie-warning
  */
 
 .wt-global {
 }
 
-.wt-header {
+.wt-header-container {
+}
+
+.wt-header-content {
 }
 
 .wt-accessibility-links {
+}
+
+.wt-site-logo {
 }
 
 .wt-site-title {
 }
 
 .wt-header-search {
+}
+
+.wt-header-search-form {
 }
 
 .wt-secondary-navigation {
@@ -63,7 +78,13 @@
 .wt-primary-menu {
 }
 
+.wt-main-container {
+}
+
 .wt-main {
+}
+
+.wt-messages {
 }
 
 .wt-page-title {
@@ -75,7 +96,10 @@
 .wt-page-content {
 }
 
-.wt-footer {
+.wt-footer-container {
+}
+
+.wt-footer-content {
 }
 
 .wt-contact-links {
