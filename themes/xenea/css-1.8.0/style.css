@@ -107,6 +107,25 @@
 	justify-content: center;
 }
 
+.wt-primary-menu .nav-item {
+	background-image: url(images/sprites-top-menu.png);
+	background-repeat: no-repeat;
+	height: 28px;
+	line-height: 28px;
+	min-width: 80px;
+	text-align: center;
+	text-indent: 0;
+	width: auto;
+}
+
+.wt-primary-menu .nav-link {
+	padding-top: 22px;
+}
+
+.wt-primary-menu .dropdown-toggle:after {
+	display: none;
+}
+
 .wt-main-container {
 }
 

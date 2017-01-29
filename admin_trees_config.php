@@ -399,11 +399,9 @@ echo Bootstrap4::breadcrumbs([
 
 		<!-- KEEP_ALIVE_YEARS_BIRTH / KEEP_ALIVE_YEARS_DEATH -->
 	<fieldset class="row form-group">
-		<div class="col-sm-4">
-			<legend class="col-form-legend col-sm-4">
-				<?= /* I18N: A configuration setting. …who were born in the last XX years or died in the last YY years */ I18N::translate('Extend privacy to dead individuals') ?>
-			</legend>
-		</div>
+		<legend class="col-form-legend col-sm-4">
+			<?= /* I18N: A configuration setting. …who were born in the last XX years or died in the 	last YY years */ I18N::translate('Extend privacy to dead individuals') ?>
+		</legend>
 		<div class="col-sm-8">
 			<?php
 			echo
