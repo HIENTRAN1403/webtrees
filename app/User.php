@@ -468,7 +468,7 @@ class User {
 			])->fetchAssoc();
 		}
 
-		if (array_key_exists($setting_name, $this->preferences)) {
+		if (!array_key_exists($setting_name, $this->preferences)) {
 			$this->preferences[$setting_name] = $default;
 		}
 

@@ -45,7 +45,7 @@
 .wt-global {
 	/* Prevent redraws when dynamic content requires a scrollbar. */
 	overflow-y: scroll;
-	/* Make the footer stick to the bottom of the window */
+	/* Keep the page as tall as the window, so the footer can remain at the bottom. */
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
@@ -87,8 +87,10 @@
 }
 
 .wt-main-container {
-	/* Make the footer stick to the bottom of the window */
+	/* Grow to fill content, to allow footer to stay at bottom of page. */
 	flex: 1;
+	/* Space between the header/footer and the main content. */
+	padding: 1rem 0;
 }
 
 .wt-main {

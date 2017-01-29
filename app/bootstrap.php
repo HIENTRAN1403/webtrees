@@ -15,6 +15,7 @@
  */
 namespace Fisharebest\Webtrees;
 
+use DateTime;
 use Fisharebest\Webtrees\Controller\PageController;
 use Fisharebest\Webtrees\Theme\AdministrationTheme;
 use PDOException;
@@ -384,7 +385,7 @@ if (Auth::check()) {
 } else {
 	date_default_timezone_set(Site::getPreference('TIMEZONE', 'UTC'));
 }
-define('WT_TIMESTAMP_OFFSET', date_offset_get(new \DateTime('now')));
+define('WT_TIMESTAMP_OFFSET', date_offset_get(new DateTime('now')));
 
 define('WT_CLIENT_JD', 2440588 + (int) ((WT_TIMESTAMP + WT_TIMESTAMP_OFFSET) / 86400));
 
